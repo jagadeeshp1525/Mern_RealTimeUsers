@@ -1,7 +1,5 @@
-// controllers/userController.js
 import User from '../models/User.js'
 
-// Create user
 export const createUser = async (req, res, io) => {
   try {
     const { name, email, role } = req.body
@@ -12,7 +10,6 @@ export const createUser = async (req, res, io) => {
     const user = new User({ name, email, role })
     await user.save()
 
-    // Emit real-time event
     io.emit('userAdded', {
       _id: user._id,
       name: user.name,
@@ -31,7 +28,6 @@ export const createUser = async (req, res, io) => {
   }
 }
 
-// Get users
 export const getUsers = async (req, res) => {
   try {
     const { q } = req.query
