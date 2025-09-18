@@ -41,7 +41,6 @@ const AdminDashboard = ({ apiBase, users, onSearch }) => {
         <button type="submit">Search</button>
       </form>
 
-      {/* toasts */}
       <div style={{ marginBottom: 12 }}>
         {toasts.map((t) => (
           <div
